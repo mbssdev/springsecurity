@@ -1,4 +1,4 @@
-package com.springsecurity.sec02.config;
+package com.springsecurity.sec03.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,19 +37,19 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user").password("{bcrypt}$2a$12$VbDai5sBU0MyUo2H2V5ez.x0lcfvQsFStkAR3qZa1HpqwLqaDl4oe").authorities("read").build();
         UserDetails admin = User.withUsername("admin").password("{bcrypt}$2a$12$VbDai5sBU0MyUo2H2V5ez.x0lcfvQsFStkAR3qZa1HpqwLqaDl4oe").authorities("admin").build();
         return new InMemoryUserDetailsManager(user, admin);
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
     @Bean
-    public CompromisedPasswordChecker compromisedPasswordChecker(){
+    public CompromisedPasswordChecker compromisedPasswordChecker() {
         return new HaveIBeenPwnedRestApiPasswordChecker();
     }
 }

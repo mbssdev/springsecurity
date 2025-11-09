@@ -1,4 +1,4 @@
-package com.springsecurity.sec02.controller;
+package com.springsecurity.sec03.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.RestController;
 public class BankRestController {
 
     @GetMapping("contact")
-    public String saveContact(){
+    public String saveContact() {
         return "contact";
     }
 
     @GetMapping("notices")
-    public String getNotices(){
+    public String getNotices() {
         return "notices";
     }
 
     @GetMapping("account")
-    public String getAccount(){
+    public String getAccount() {
         return "account";
     }
 
     @GetMapping("balance")
-    public String getBalance(){
+    public String getBalance() {
         return "balance";
     }
 
     @GetMapping("loan")
-    public String getLoan(){
+    public String getLoan() {
         return "loan";
     }
 
     @GetMapping("card")
-    public String getCard(){
+    public String getCard() {
         return "card";
     }
 }
