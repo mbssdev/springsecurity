@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: sec07
+  config:
+    active:
+      on-profile: prod
+  datasource:
+    url: jdbc:oracle:thin:@//192.168.100.120:1521/MOBILEPDB
+    username: BARZEGAR
+    password: MbBzg#120*
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      max-lifetime: 1500000
+      connection-timeout: 30000
+      pool-name: HikariPoolBooks
+      validation-timeout: 5000
+      connection-test-query: SELECT 1 FROM DUAL
+
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: update
+
+server:
+  servlet:
+    session:
+      timeout: 2m
